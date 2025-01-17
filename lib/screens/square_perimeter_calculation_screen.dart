@@ -50,6 +50,7 @@ class _SquarePerimeterCalculationScreenState extends State<SquarePerimeterCalcul
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Por favor insira um valor';
                   if (double.tryParse(value) == null) return 'Valor inválido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe valor > 0';
                   return null;
                 },
               ),

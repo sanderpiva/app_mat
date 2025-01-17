@@ -59,6 +59,7 @@ class _PythagorasCalculationScreenState extends State<PythagorasCalculationScree
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Por favor insira um valor';
                   if (double.tryParse(value) == null) return 'Valor inválido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe cateto oposto > 0';
                   return null;
                 },
               ),
@@ -69,6 +70,7 @@ class _PythagorasCalculationScreenState extends State<PythagorasCalculationScree
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Por favor insira um valor';
                   if (double.tryParse(value) == null) return 'Valor inválido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe cateto adjacente > 0';
                   return null;
                 },
               ),
