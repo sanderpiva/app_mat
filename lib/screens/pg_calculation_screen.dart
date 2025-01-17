@@ -64,6 +64,7 @@ class _PGCalculationScreenState extends State<PGCalculationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Informe o primeiro termo';
                   if (double.tryParse(value) == null) return 'Digite um número válido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe primeiro termo > 0';
                   return null;
                 },
               ),
@@ -74,6 +75,7 @@ class _PGCalculationScreenState extends State<PGCalculationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Informe a razão';
                   if (double.tryParse(value) == null) return 'Digite um número válido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe razão "q" > 0';
                   return null;
                 },
               ),
@@ -84,6 +86,7 @@ class _PGCalculationScreenState extends State<PGCalculationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Informe a posição';
                   if (int.tryParse(value) == null) return 'Digite um número inteiro válido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe posição > 0';
                   return null;
                 },
               ),

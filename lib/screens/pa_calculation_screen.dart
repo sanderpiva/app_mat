@@ -73,6 +73,7 @@ class _PACalculationScreenState extends State<PACalculationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Informe a razão';
                   if (double.tryParse(value) == null) return 'Digite um número válido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe razão "r" > 0';
                   return null;
                 },
               ),
@@ -83,6 +84,7 @@ class _PACalculationScreenState extends State<PACalculationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Informe a posição';
                   if (int.tryParse(value) == null) return 'Digite um número inteiro válido';
+                  if (double.tryParse(value) != null && double.tryParse(value)! == 0) return 'Informe posição > 0';
                   return null;
                 },
               ),
